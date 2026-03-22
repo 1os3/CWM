@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/World/GameWorld.cs" id="1_world"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_world")
+
+[node name="WaterLayer" type="TileMapLayer" parent="."]
+z_index = -20
+
+[node name="TerrainLayer" type="TileMapLayer" parent="."]
+z_index = -10
+
+[node name="DecorationLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+z_index = 10
+
+[node name="EntityLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+z_index = 20
+
+[node name="PlayersRoot" type="Node2D" parent="."]
+y_sort_enabled = true
+z_index = 30
+
+[node name="FaunaRoot" type="Node2D" parent="."]
+y_sort_enabled = true
+z_index = 25
+
+[node name="NpcRoot" type="Node2D" parent="."]
+y_sort_enabled = true
+z_index = 27
+
+[node name="Weather" type="Node2D" parent="."]
+z_index = 50
+
+[node name="RainParticles" type="GPUParticles2D" parent="Weather"]
+position = Vector2(0, -400)
+
+[node name="SnowParticles" type="GPUParticles2D" parent="Weather"]
+position = Vector2(0, -420)

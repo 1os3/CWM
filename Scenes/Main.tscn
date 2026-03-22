@@ -1,0 +1,55 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Core/GameManager.cs" id="1_main"]
+[ext_resource type="PackedScene" path="res://Scenes/World/GameWorld.tscn" id="2_world"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/MainMenu.tscn" id="3_menu"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/HUD.tscn" id="4_hud"]
+[ext_resource type="Script" path="res://Scripts/Weather/DayNightCycle.cs" id="5_day"]
+[ext_resource type="Script" path="res://Scripts/Weather/SeasonManager.cs" id="6_season"]
+[ext_resource type="Script" path="res://Scripts/Weather/WeatherSystem.cs" id="7_weather"]
+[ext_resource type="Script" path="res://Scripts/World/WorldGenerator.cs" id="8_worldgen"]
+[ext_resource type="Script" path="res://Scripts/Ecology/EcosystemSimulator.cs" id="9_ecosim"]
+[ext_resource type="Script" path="res://Scripts/Ecology/FaunaManager.cs" id="10_fauna"]
+[ext_resource type="Script" path="res://Scripts/Ecology/NpcManager.cs" id="10b_npc"]
+[ext_resource type="Script" path="res://Scripts/Network/NetworkManager.cs" id="11_network"]
+[ext_resource type="Script" path="res://Scripts/Network/SyncManager.cs" id="12_sync"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="GameWorld" parent="." instance=ExtResource("2_world")]
+
+[node name="MainMenu" parent="." instance=ExtResource("3_menu")]
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="DayNightCycle" type="CanvasModulate" parent="."]
+script = ExtResource("5_day")
+
+[node name="SeasonManager" type="Node" parent="."]
+script = ExtResource("6_season")
+
+[node name="WeatherSystem" type="Node" parent="."]
+script = ExtResource("7_weather")
+
+[node name="WorldGenerator" type="Node" parent="."]
+script = ExtResource("8_worldgen")
+
+[node name="EcosystemSimulator" type="Node" parent="."]
+script = ExtResource("9_ecosim")
+
+[node name="FaunaManager" type="Node" parent="."]
+script = ExtResource("10_fauna")
+
+[node name="NpcManager" type="Node" parent="."]
+script = ExtResource("10b_npc")
+
+[node name="NetworkManager" type="Node" parent="."]
+script = ExtResource("11_network")
+
+[node name="SyncManager" type="Node" parent="."]
+script = ExtResource("12_sync")
+
+[node name="ExportFileDialog" type="FileDialog" parent="."]
+
+[node name="ImportFileDialog" type="FileDialog" parent="."]

@@ -1,0 +1,47 @@
+# Godot 4+ 编辑器缓存与导入缓存（勿提交）
+.godot/
+
+# 旧版导入目录（若仍存在）
+.import/
+
+# 导出配置常含本机路径；凭据在 .godot/export_credentials.cfg（已被 .godot/ 忽略）
+export_presets.cfg
+export.cfg
+
+# 从 CSV 等自动生成的翻译
+*.translation
+
+# 旧 Mono 目录
+.mono/
+
+# Godot 导出目录常见命名（如 data_<项目名>_platform_arch）
+data_*/
+
+# 移动端导出目录
+/android/
+/ios/
+
+# .NET / C# 构建产物
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# IDE
+.vs/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Mono 崩溃转储
+mono_crash.*.json
+
+# Godot 导出/本地运行产生的二进制与旧工程备份（勿提交仓库）
+*.exe
+*.pck
+*.csproj.old

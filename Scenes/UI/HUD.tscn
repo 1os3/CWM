@@ -1,0 +1,319 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/HudController.cs" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SnapshotSyncBanner" type="Label" parent="Root"]
+z_index = 50
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -88.0
+offset_right = 280.0
+offset_bottom = -24.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
+text = ""
+
+[node name="TopLeftPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = -10.0
+
+[node name="Scroll" type="ScrollContainer" parent="Root/TopLeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopLeftPanel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="ClockLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Time: --"
+
+[node name="WeatherLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Weather: --"
+
+[node name="NetworkLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Network: --"
+
+[node name="TileLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Tile: --"
+autowrap_mode = 2
+
+[node name="BrushLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Brush: Off"
+
+[node name="BrushControls" type="HBoxContainer" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+
+[node name="BrushBiomeLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Brush Preset"
+
+[node name="BrushBiomeOption" type="OptionButton" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+
+[node name="BrushToggleButton" type="Button" parent="Root/TopLeftPanel/Scroll/VBox/BrushControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "B Brush"
+
+[node name="BrushMinusButton" type="Button" parent="Root/TopLeftPanel/Scroll/VBox/BrushControls"]
+layout_mode = 2
+text = "-"
+
+[node name="BrushPlusButton" type="Button" parent="Root/TopLeftPanel/Scroll/VBox/BrushControls"]
+layout_mode = 2
+text = "+"
+
+[node name="SuccessionLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Succession Speed: 1x"
+
+[node name="SuccessionControls" type="HBoxContainer" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+
+[node name="SuccessionToggle" type="CheckBox" parent="Root/TopLeftPanel/Scroll/VBox/SuccessionControls"]
+layout_mode = 2
+text = "Fast Mode"
+
+[node name="SuccessionMultiplierSpinBox" type="SpinBox" parent="Root/TopLeftPanel/Scroll/VBox/SuccessionControls"]
+layout_mode = 2
+custom_minimum_size = Vector2(90, 0)
+min_value = 1.0
+max_value = 192.0
+step = 1.0
+value = 24.0
+
+[node name="SuccessionStepLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Succession Step: 0.25h"
+
+[node name="SuccessionStepSpinBox" type="SpinBox" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(90, 0)
+min_value = 0.0625
+max_value = 2.0
+step = 0.0625
+value = 0.25
+
+[node name="MessageLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Message"
+autowrap_mode = 2
+
+[node name="FarmingLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Farming: Off [G]"
+
+[node name="FarmingModeButton" type="Button" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "G Farming: Off"
+
+[node name="FarmToolLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+visible = false
+layout_mode = 2
+text = "Farm Tool [R]"
+
+[node name="FarmToolOption" type="OptionButton" parent="Root/TopLeftPanel/Scroll/VBox"]
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+fit_to_longest_item = true
+
+[node name="GranaryLabel" type="Label" parent="Root/TopLeftPanel/Scroll/VBox"]
+layout_mode = 2
+text = "Granary: 0 units"
+
+[node name="TopRightPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -230.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 360.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopRightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MiniMapLabel" type="Label" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+text = "Mini Map"
+horizontal_alignment = 1
+
+[node name="MiniMapRect" type="TextureRect" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 200)
+expand_mode = 1
+stretch_mode = 5
+clip_contents = true
+
+[node name="MiniMapMarker" type="ColorRect" parent="Root/TopRightPanel/VBox/MiniMapRect"]
+custom_minimum_size = Vector2(6, 6)
+offset_right = 6.0
+offset_bottom = 6.0
+mouse_filter = 2
+color = Color(1, 0.15, 0.15, 0.95)
+
+[node name="ExportButton" type="Button" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+text = "Export World"
+
+[node name="ImportButton" type="Button" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+text = "Import World"
+
+[node name="ClimateEditorButton" type="Button" parent="Root/TopRightPanel/VBox"]
+layout_mode = 2
+text = "Climate Config"
+
+[node name="ClimateWindow" type="Window" parent="Root"]
+visible = false
+title = "Climate Field Editor"
+size = Vector2i(480, 620)
+unresizable = true
+
+[node name="Margin" type="MarginContainer" parent="Root/ClimateWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/ClimateWindow/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HelpLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Hold Q and move on the heatmap to paint. Changes are applied live to the selected climate control field."
+autowrap_mode = 2
+
+[node name="FieldLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Field"
+
+[node name="FieldOption" type="OptionButton" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+
+[node name="ValueLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Target Value: 0.50"
+
+[node name="ValueSlider" type="HSlider" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="StrengthLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Brush Strength: 0.35"
+
+[node name="StrengthSlider" type="HSlider" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+min_value = 0.05
+max_value = 1.0
+step = 0.05
+value = 0.35
+
+[node name="HeatmapLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Heatmap"
+
+[node name="ClimateMapRect" type="TextureRect" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(360, 320)
+expand_mode = 1
+stretch_mode = 5
+clip_contents = true
+
+[node name="ClimateBrushPreview" type="ColorRect" parent="Root/ClimateWindow/Margin/VBox/ClimateMapRect"]
+visible = false
+offset_right = 14.0
+offset_bottom = 14.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.22)
+
+[node name="StatusLabel" type="Label" parent="Root/ClimateWindow/Margin/VBox"]
+layout_mode = 2
+text = "Editing Rainfall"
+autowrap_mode = 2
+
+[node name="NpcInteractionWindow" type="Window" parent="Root"]
+visible = false
+title = "村民"
+size = Vector2i(440, 280)
+unresizable = true
+
+[node name="Margin" type="MarginContainer" parent="Root/NpcInteractionWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/NpcInteractionWindow/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NpcTitleLabel" type="Label" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "村民"
+
+[node name="NpcHintLabel" type="Label" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "好感: 50"
+autowrap_mode = 2
+
+[node name="TalkButton" type="Button" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "交谈"
+
+[node name="GiftButton" type="Button" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "赠送作物 (消耗粮仓)"
+
+[node name="HelpButton" type="Button" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "协助耕种"
+
+[node name="CloseNpcButton" type="Button" parent="Root/NpcInteractionWindow/Margin/VBox"]
+layout_mode = 2
+text = "关闭"
