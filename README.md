@@ -66,10 +66,6 @@ Shaders/         # 着色器资源
 
 默认窗口分辨率在 `project.godot` 的 `[display]` 中配置；玩家摄像机缩放可在 `Scenes/Player/Player.tscn` 的 `Camera2D.zoom` 调整。
 
-## 许可
-
-若未另行提供许可证文件，则版权与再分发条件以仓库所有者声明为准。
-
 ---
 
 **提示**：联机时请保证防火墙放行所选 **UDP 端口**（代码中默认端口见 `Scripts/Core/Constants.cs` 的 `DefaultPort`，一般为 **7777**）；主机与客户端需使用兼容的 Godot / .NET 版本构建。
