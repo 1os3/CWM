@@ -4,6 +4,10 @@
 # 旧版导入目录（若仍存在）
 .import/
 
+# 资源导入侧车文件、脚本 UID（本地由 Godot 重新生成，可不入库）
+*.import
+*.uid
+
 # 导出配置常含本机路径；凭据在 .godot/export_credentials.cfg（已被 .godot/ 忽略）
 export_presets.cfg
 export.cfg
