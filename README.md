@@ -70,7 +70,8 @@ Shaders/         # 着色器资源
 
 本项目采用与 **Linux 内核** 相同的开源许可：**GNU General Public License version 2 only**（**GPL-2.0-only**）。
 
-- 许可证全文：<https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>  
+- 许可证正文（与官方一致）：仓库根目录 [`COPYING`](COPYING)  
+- 在线全文：<https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>  
 - 常见问题：<https://www.gnu.org/licenses/gpl-faq.en.html>
 
 在 GPL-2.0 下分发本程序或其衍生作品时，须遵守该许可证关于提供源代码与相同授权条款的要求。
